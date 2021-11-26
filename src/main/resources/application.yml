@@ -3,3 +3,7 @@ spring:
     host: localhost
     port: 6379
 
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+
