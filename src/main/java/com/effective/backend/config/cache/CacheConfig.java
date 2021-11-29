@@ -39,10 +39,9 @@ public class CacheConfig extends CachingConfigurerSupport {
     @Bean
     public CacheManager globalCacheManager() {
         RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig();
-        RedisCacheManager redisCacheManager = RedisCacheManager.RedisCacheManagerBuilder
+        return RedisCacheManager.RedisCacheManagerBuilder
                 .fromConnectionFactory(connectionFactory)
                 .cacheDefaults(redisCacheConfiguration).build();
-        return redisCacheManager;
     }
 
     @Bean

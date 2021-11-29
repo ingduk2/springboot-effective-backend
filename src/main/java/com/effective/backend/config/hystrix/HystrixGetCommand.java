@@ -1,9 +1,6 @@
 package com.effective.backend.config.hystrix;
 
 import com.netflix.hystrix.HystrixCommand;
-import com.netflix.hystrix.HystrixCommandGroupKey;
-import com.netflix.hystrix.HystrixCommandKey;
-import com.netflix.hystrix.HystrixCommandProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.Cache;
 import org.springframework.cache.Cache.ValueWrapper;
@@ -22,7 +19,7 @@ public class HystrixGetCommand extends HystrixCommand<ValueWrapper> {
 
 
     @Override
-    protected ValueWrapper run() throws Exception {
+    protected ValueWrapper run() {
         log.info("global get");
         return globalCache.get(key);
     }
